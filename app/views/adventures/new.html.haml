@@ -1,0 +1,29 @@
+%h2 Create New Adventure
+
+= form_tag adventures_path, :method => :post do
+
+  = label :adventure, :name, 'Name'
+  = text_field :adventure, :name
+  
+  = label :adventure, :party_size, 'Party Size'
+  = select :adventure, :party_size, [1,2,3,4,5,6]
+ 
+  = label :adventure, :party_level, 'Party Level Average'
+  = select :adventure, :party_level, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+  
+  = label :adventure, :dungeon_type, 'Dungeon Type'
+  = select :adventure, :dungeon_type, ['Dungeon', 'Wilderness', 'City']
+  
+  = label :adventure, :dungeon_subtype, 'Dungeon SubType'
+  = select :adventure, :dungeon_subtype, ['Ruined Structure', 'Occupied Structure', 'Safe Storage', 'Natural Cavern Complex']
+  
+  = label :adventure, :terrain, 'Terrain'
+  = select :adventure, :terrain, ['Forest', 'Jungle', 'Ocean', 'Savannah', 'Swamp', 'Hill', 'Mountain', 'Desert']
+  
+  = label :adventure, :climate, 'Climate'
+  = select :adventure, :climate, ['Cold', 'Temperate', 'Desert']
+  
+  = label :adventure, :difficulty, 'Difficulty'
+  = select :adventure, :difficulty, ['Very Easy', 'Easy', 'Moderate', 'Hard', 'Very Hard', 'Death Sentence']
+  
+  = submit_tag 'Generate!'

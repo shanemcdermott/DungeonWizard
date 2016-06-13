@@ -1,0 +1,38 @@
+-#  This file is app/views/adventures/index.html.haml
+=image_tag "logo.png"
+%h1 All Adventures
+
+%table#adventures
+  %thead
+    %tr
+      %th Adventure Name
+      %th Party Size
+      %th Party Level
+      %th Dungeon Type
+      %th Dungeon Subtype
+      %th Terrain
+      %th Climate
+      %th Difficulty
+      %th Creature Type
+  %tbody
+    - @adventures.each do |adventure|
+      %tr
+        %td= adventure.name 
+        %td= adventure.party_size
+        %td= adventure.party_level
+        %td= adventure.dungeon_type
+        %td= adventure.dungeon_subtype
+        %td= adventure.terrain
+        %td= adventure.climate
+        %td= adventure.difficulty
+        %td= adventure.creature_type
+= link_to 'Generate new Adventure', new_adventure_path
+%h2 Dungeon
+%body
+  -generate_map
+%table
+  %tbody
+    - 32.times do |row|
+      %tr
+        - 24.times do |column|
+          %td= get_map_cell(row,column)
